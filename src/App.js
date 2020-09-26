@@ -1,26 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const ProfileWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: fill-available;
+`;
+
+const Profile = styled.img`
+  width: 500px;
+  height: 500px;
+  border-radius: 250px;
+`;
+
+const App = () => (
+  <div>
+    <ProfileWrapper>
+      <Profile src={process.env.PUBLIC_URL + '/img/profile.jpg'} />
+    </ProfileWrapper>
+  </div>
+);
 
 export default App;
